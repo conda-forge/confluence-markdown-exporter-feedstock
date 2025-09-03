@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: confluence-markdown-exporter
-  version: "3.0.3"
+  version: "3.0.4"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/confluence_markdown_exporter-${{ version }}.tar.gz
-  sha256: c850dce2b55121d85ddd1387c790d0a3a79197f9cf7ee2db8bae4370419a8998
+  sha256: 33eb10c48ee71b24edbe678f0988de162152b7e3c130c09cc58a91b59cccd8a9
 
 build:
   number: 0
