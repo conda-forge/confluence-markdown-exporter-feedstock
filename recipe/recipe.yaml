@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: confluence-markdown-exporter
-  version: "3.1.0"
+  version: 4.0.0
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/confluence_markdown_exporter-${{ version }}.tar.gz
-  sha256: ec698a8363fd88e7c52d92773c3bd9d02075ce5e2ff0a416708cf94141fba93c
+  sha256: db72e6c2288a34eae87ccdb375a50075ea8d75ad7276cb4d123185b70fc51023
 
 build:
   number: 0
@@ -32,15 +32,17 @@ requirements:
     - atlassian-python-api
     - jmespath
     - markdownify
-    - pandas
     - pydantic-settings
     - pyyaml
     - questionary
     - tabulate
-    - tqdm
     - typer
     - python-dateutil
-
+    - pydantic
+    - beautifulsoup4
+    - requests
+    - rich
+    - lxml >=6.0.2
 tests:
   - python:
       imports:
