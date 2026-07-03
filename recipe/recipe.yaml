@@ -36,6 +36,7 @@ requirements:
     - questionary
     - rich
     - tabulate
+    - typer
 
 tests:
   - python:
