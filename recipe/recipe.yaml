@@ -2,73 +2,61 @@
 schema_version: 1
 
 context:
-  name: confluence-markdown-exporter
-  version: "4.1.1"
+  version: "5.2.1"
 
 package:
-  name: ${{ name|lower }}
+  name: confluence-markdown-exporter
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/confluence_markdown_exporter-${{ version }}.tar.gz
-  sha256: 858b2bd5d77762908de3611c79a085dda4256ee650d3326b97a295683c5500c3
+  url: 
+    https://pypi.org/packages/source/c/confluence-markdown-exporter/confluence_markdown_exporter-${{
+    version }}.tar.gz
+  sha256: ee270e5554dee01e466dd6c6d917a8f883a365aed1492af139efb3469267cb9a
 
 build:
   number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  python:
-    entry_points:
-      - confluence-markdown-exporter = confluence_markdown_exporter.main:app
-      - cf-export = confluence_markdown_exporter.main:app
 
 requirements:
   host:
     - python ${{ python_min }}.*
-    - hatchling
     - pip
+    - hatchling
   run:
-    - python >=${{ python_min }},<4.0
+    - python >=${{ python_min }}
     - atlassian-python-api
     - jmespath
+    - lxml >=6.0.2
     - markdownify
     - pydantic-settings
+    - python-dateutil
     - pyyaml
     - questionary
+    - rich
     - tabulate
     - typer
-    - python-dateutil
-    - pydantic
-    - beautifulsoup4
-    - requests
-    - rich
-    - lxml >=6.0.2
+
 tests:
   - python:
       imports:
-        - confluence_markdown_exporter
       pip_check: true
-      python_version: ${{ python_min }}.*
-  - requirements:
-      run:
-        - pip
-        - python ${{ python_min }}.*
-    script:
-      - confluence-markdown-exporter --help
-      - cf-export --help
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
-  summary: A tool to export Confluence pages to Markdown
-  homepage: https://pypi.org/project/confluence-markdown-exporter
-  repository: https://github.com/Spenhouet/confluence-markdown-exporter
-  description: |
-    The confluence-markdown-exporter exports Confluence pages in Markdown format. 
-    This exporter helps in migrating content from Confluence to platforms that support Markdown. 
-    e.g. Obsidian, Gollum, Azure DevOps (ADO), Foam, Dendron and more.
-  documentation: https://github.com/Spenhouet/confluence-markdown-exporter/blob/main/README.md
+  homepage: https://github.com/Spenhouet/confluence-markdown-exporter
   license: MIT
   license_file: LICENSE
-
+  summary: A tool to export Confluence pages to Markdown
+  description: "The confluence-markdown-exporter exports Confluence pages in Markdown
+    format. \nThis exporter helps in migrating content from Confluence to platforms
+    that support Markdown. \ne.g. Obsidian, Gollum, Azure DevOps (ADO), Foam, Dendron
+    and more.\n"
+  repository: https://github.com/Spenhouet/confluence-markdown-exporter
+  documentation: https://spenhouet.github.io/confluence-markdown-exporter/
 extra:
   recipe-maintainers:
     - rxm7706
