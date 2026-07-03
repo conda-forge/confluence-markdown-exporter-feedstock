@@ -3,7 +3,7 @@ About confluence-markdown-exporter-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/confluence-markdown-exporter-feedstock/blob/main/LICENSE.txt)
 
-Home: https://pypi.org/project/confluence-markdown-exporter
+Home: https://github.com/Spenhouet/confluence-markdown-exporter
 
 Package license: MIT
 
@@ -11,7 +11,7 @@ Summary: A tool to export Confluence pages to Markdown
 
 Development: https://github.com/Spenhouet/confluence-markdown-exporter
 
-Documentation: https://github.com/Spenhouet/confluence-markdown-exporter/blob/main/README.md
+Documentation: https://spenhouet.github.io/confluence-markdown-exporter/
 
 The confluence-markdown-exporter exports Confluence pages in Markdown format. 
 This exporter helps in migrating content from Confluence to platforms that support Markdown. 
@@ -24,7 +24,9 @@ Current build status
 <table><tr>
     <td>All platforms:</td>
     <td>
-      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
+      <a href="https://github.com/conda-forge/confluence-markdown-exporter-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/confluence-markdown-exporter-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
     </td>
   </tr>
 </table>
