@@ -2,17 +2,15 @@
 schema_version: 1
 
 context:
-  version: "5.2.1"
+  version: 5.4.0
 
 package:
   name: confluence-markdown-exporter
   version: ${{ version }}
 
 source:
-  url: 
-    https://pypi.org/packages/source/c/confluence-markdown-exporter/confluence_markdown_exporter-${{
-    version }}.tar.gz
-  sha256: ee270e5554dee01e466dd6c6d917a8f883a365aed1492af139efb3469267cb9a
+  url: https://pypi.org/packages/source/c/confluence-markdown-exporter/confluence_markdown_exporter-${{ version }}.tar.gz
+  sha256: 98a9b5d58a7ba99ac271c1765165eba629c559a8a9e3d4b5188fbc673119b684
 
 build:
   number: 0
@@ -26,7 +24,7 @@ requirements:
     - hatchling
   run:
     - python >=${{ python_min }}
-    - atlassian-python-api
+    - atlassian-python-api >=4,<5
     - jmespath
     - lxml >=6.0.2
     - markdownify
@@ -37,24 +35,20 @@ requirements:
     - rich
     - tabulate
     - typer
-
 tests:
   - python:
       imports:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - "*"
+        - '*'
 
 about:
   homepage: https://github.com/Spenhouet/confluence-markdown-exporter
   license: MIT
   license_file: LICENSE
   summary: A tool to export Confluence pages to Markdown
-  description: "The confluence-markdown-exporter exports Confluence pages in Markdown
-    format. \nThis exporter helps in migrating content from Confluence to platforms
-    that support Markdown. \ne.g. Obsidian, Gollum, Azure DevOps (ADO), Foam, Dendron
-    and more.\n"
+  description: "The confluence-markdown-exporter exports Confluence pages in Markdown format. \nThis exporter helps in migrating content from Confluence to platforms that support Markdown. \ne.g. Obsidian, Gollum, Azure DevOps (ADO), Foam, Dendron and more.\n"
   repository: https://github.com/Spenhouet/confluence-markdown-exporter
   documentation: https://spenhouet.github.io/confluence-markdown-exporter/
 extra:
