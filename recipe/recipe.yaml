@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "5.6.0"
+  version: 5.7.0
 
 package:
   name: confluence-markdown-exporter
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/c/confluence-markdown-exporter/confluence_markdown_exporter-${{ version }}.tar.gz
-  sha256: 36fe5102550b4652d05dd1e881733b8dad50148f117c21675563cf86bafe974f
+  sha256: 882ec4ed40fb438e2de626351bc1553d3c899c37ad2c84b3688aaee319086242
 
 build:
   number: 0
@@ -35,6 +35,7 @@ requirements:
     - rich
     - tabulate
     - typer
+    - markdown-it-py
 tests:
   - python:
       imports:
